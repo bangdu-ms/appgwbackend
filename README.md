@@ -22,30 +22,8 @@ CentOS 7+
 
 ## How to setup
 
-Install requirements
 ```sh
-yum install -y httpd httpd-devel python36 python36-devel gcc git
-dnf install redhat-rpm-config
+wget https://raw.githubusercontent.com/bangdu-ms/appgwbackend/master/setup/setup.sh
+sudo chmod u+x setup.sh
+sudo ./setup.sh
 ```
-
-Install virtualenv
-```sh
-pip3 install mod_wsgi virtualenv
-easy_install-3 virtualenv
-```
-
-Setup django project
-```sh
-cd /var/ww/
-git clone https://github.com/bangdu-ms/appgwbackend.git
-/usr/local/bin/virtualenv venv
-pip3 install -r requirements.txt
-```
-
-Config and restart apache
-```sh
-mv httpd.conf/django.conf /etc/httpd/conf.d/
-service httpd restart
-```
-
-Access from browser
